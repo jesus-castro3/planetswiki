@@ -22,7 +22,7 @@ We will be learning the basics of a React application, and explore the following
 
 
 ## Instructions
-- Clone this repo e.g. `git clone {url}`
+- Clone this repo e.g. `git clone https://github.com/jesus-castro3/planetswiki.git`
 - `npm install`
 - `npm start`
 
