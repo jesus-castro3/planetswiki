@@ -15,13 +15,13 @@ We will be learning the basics of a React application, and explore the following
 - Adding styles
 
 
-Requirements:
+## Requirements:
 
 - install Node
 - install NPM
 
 
-Instructions
+## Instructions
 - Clone this repo e.g. `git clone {url}`
 - `npm install`
 - `npm start`
