@@ -49,7 +49,7 @@ class App extends React.Component {
   }
 
   next() {
-    const tracker = (this.state.entityTracker === this.state.entityList.length) ? this.state.entityList.length : this.state.entityTracker + 1;
+    const tracker = (this.state.entityTracker === this.state.entityList.length - 1) ? this.state.entityTracker : this.state.entityTracker + 1;
     this.setState({
       entityTracker: tracker,
       currentEntity: this.state.entityList[tracker]

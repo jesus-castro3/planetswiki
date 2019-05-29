@@ -39,8 +39,12 @@ function WikiDetails(props) {
 
   const close = (close) => (
     <span className='wiki-details__close' onClick={ ()=> close()}>
-      {'X'}
+      {'×'}
     </span>
+  )
+
+  const navbar = ({ back, next, tracker}) => (
+    <NavBar back={back} next={next} tracker={tracker}/>
   )
  
   return(
@@ -48,7 +52,7 @@ function WikiDetails(props) {
       { props.show && close(props.close) }
       { props.show && media(props.currentEntity) }
       { props.show && details(props.currentEntity) }
-      { props.show && <NavBar back={props.back} next={props.next} tracker={props.tracker}/>}
+      { props.show && navbar(props)}
     </Fragment>
   )
 }

@@ -34,7 +34,7 @@ body {
 }
 
 .planet {
-  transition: 0.4s;
+  transition: 0.8s;
   border-radius: 50% 50%;
   box-shadow: inset 4px 0px 9px rgba(0, 0, 0, 0.8);
   background: linear-gradient(to right, rgba(32, 32, 32, 0.4), rgba(255, 255, 255, 0.4));
@@ -50,7 +50,7 @@ body {
   align-items: center;
   position: relative;
   text-align: center;
-  transition: 0.4s;
+  transition: 0.8s;
   padding: 20px;
   cursor: pointer;
 }
@@ -58,11 +58,11 @@ body {
 .planet__wrapper:hover {
   background: #251a2e;
   background: linear-gradient(to right, #5e3f74, #251a2e);
-  transition: 0.4s;
+  transition: 0.8s;
 }
 
 .planet__wrapper:hover .planet {
-  transition: 0.4s;
+  transition: 0.8s;
   box-shadow: none;
   background: none;
   box-shadow: inset -4px 0px 9px rgba(0, 0, 0, 0.8);
@@ -98,6 +98,15 @@ body {
   width: inherit;
   height: inherit;
   object-fit: cover;
+}
+
+.wiki-details__close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  font-size: 4em;
+  cursor: pointer;
 }
 
 .navbar {
