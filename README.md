@@ -87,3 +87,48 @@ console.log(b);
 
 console.log(rest);
 ```
+
+React Cheat Sheet
+
+```
+//class component
+class Button extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      //init your state here
+    }
+  }
+
+  render() {
+    return {
+      <div>
+        <button>Click Me</button>
+      </div>
+    }
+  }
+
+}
+
+// Stateless/Pure Component using functions
+
+function Button2(props) {
+  return {
+      <div>
+        <button>Click Me</button>
+      </div>
+  }
+}
+
+// Stateless/Pure Component using function expression
+const Button3 = (props) => (
+      <div>
+        <button>Click Me</button>
+      </div>
+)
+
+// Passing props to <Button/> component
+
+<Button propName={propValue} />
+
+```
