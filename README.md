@@ -6,14 +6,12 @@ We will be learning the basics of a React application, and explore the following
 - What is React
 - What is JSX
 - ES6 features will be using
-- What is a component
 - Creating components in React
-- What is State
-- What are Props
-- Component lifecycles
+- Creating component state
+- Component props
+- Component lifecycles methods
 - Conditional Rendering
 - Adding styles
-
 
 ## Requirements:
 
@@ -26,24 +24,66 @@ We will be learning the basics of a React application, and explore the following
 - `npm install`
 - `npm start`
 
+## Link to the intro presentation:
+https://slides.com/kida1990/react-for-first-times
+
+## ES6 syntax will be using
+
+## Arrow Functions
+
+```
+[1,2,3,4].map(n => n * 20 )
+
+//vs
+
+[1,2,3,4].map(function(n) {
+  return n * 20
+})
+
+//if arrow function receives more then one argument sorrownd w/ ()
+[1,2,3,4].map( (n,idx) => n * 20 + idx  )
+
+//NOTE: you cannot bind this context to arrow functions, this will refer to original context
+```
+
+## Class Components vs Stateless Components
+There are a couple of ways to create components but will be using **TWO** for this workshop
+```
+/** Class Component, includes state **/
+class Button extends React.Component {
+  constructor() {
+    super(props)
+    this.state = {}
+  }
+  render() {
+   <div>
+    <button>click me</button>
+   </div>
+  }
+}
+
+/** Stateless component, using function expression w/ arrow functions **/
+
+const Button = () => (
+  <button>click me</button>
+)
 
 
-## What is React?
+```
 
-## What is JSX?
+## Destructuring
+The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+```
+var a, b, rest;
+[a, b] = [10, 20];
 
-## ES6 features will be using
+console.log(a);
+// expected output: 10
 
-## What is a component
+console.log(b);
+// expected output: 20
 
-## Creating components in React
+[a, b, ...rest] = [10, 20, 30, 40, 50];
 
-## What is State
-
-## What are Props
-
-## Component lifecycles
-
-## Conditional Rendering
-
-## Adding styles
+console.log(rest);
+```
