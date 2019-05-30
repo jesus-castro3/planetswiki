@@ -7,8 +7,10 @@ import { API } from './api';
 import './App.css';
 
 class App extends React.Component {
+
   constructor(props) {
     super(props)
+
     this.state = {
       showLandingPage: true,
       showWikiDetails: false,
@@ -16,6 +18,7 @@ class App extends React.Component {
       entityTracker: 0,
       entityList: []
     }
+    
     this.showWiki = this.showWiki.bind(this);
     this.close = this.close.bind(this);
     this.entityClick = this.entityClick.bind(this);

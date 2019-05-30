@@ -7,7 +7,6 @@ function WikiDetails(props) {
     const [data] = entity.data;
     return(
       <div className="wiki-details">
-
         <h2 className="wiki-details__title">{data.title}</h2>
         <p className="wiki-details__date">{data.date_created}</p>
         <p className="wiki-details__description">{data.description}</p>        
@@ -15,9 +14,7 @@ function WikiDetails(props) {
     )
   }
 
-  const renderImage = (img) => (
-    <img className="wiki-details__media-image" src={img.href}/>
-  )
+  const renderImage = (img) => <img className="wiki-details__media-image" src={img.href}/>
 
 
   const renderVideo = (video) => (
@@ -43,9 +40,8 @@ function WikiDetails(props) {
     </span>
   )
 
-  const navbar = ({ back, next, tracker}) => (
-    <NavBar back={back} next={next} tracker={tracker}/>
-  )
+  const navbar = ({ back, next, tracker}) => <NavBar back={back} next={next} tracker={tracker}/>
+
  
   return(
     <Fragment>
