@@ -4,6 +4,11 @@ body {
   color: #fff;
 }
 
+
+
+
+/****** LANDING PAGE STYLES *******/
+
 .landing-page {
   text-align: center;
 }
@@ -19,6 +24,12 @@ body {
   font-size: 1.3em;
 }
 
+
+
+
+
+/******* SLIDER STYLES ********/
+
 .slider {
   width: 100%;
   overflow-x: scroll;
@@ -32,6 +43,12 @@ body {
 .slider::-webkit-scrollbar {
   display: none;
 }
+
+
+
+
+
+/******* ENTITY STYLES ********/
 
 .planet {
   transition: 0.8s;
@@ -68,6 +85,12 @@ body {
   box-shadow: inset -4px 0px 9px rgba(0, 0, 0, 0.8);
   background: linear-gradient(to left, rgba(32, 32, 32, 0.4), rgba(255, 255, 255, 0.4));
 }
+
+
+
+
+
+/******* WIKIDETAILS STYLES ********/
 
 .wiki-details {
   padding: 1.8em;
@@ -108,6 +131,12 @@ body {
   font-size: 4em;
   cursor: pointer;
 }
+
+
+
+
+
+/******* NAVBAR STYLES ********/
 
 .navbar {
   width: 100%;

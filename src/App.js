@@ -8,54 +8,40 @@ import './App.css';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      showLandingPage: true,
-      showWikiDetails: false,
-      currentEntity: null,
-      entityTracker: 0,
-      entityList: []
-    }
-    
-  }
-
-  showWiki() {
-
-  }
-
-  close() {
-
-  }
-
-  entityClick(name) {
-
-  }
-
-  next() {
+  /* We create our state here*/
 
 
-  }
-
-  back() {
+  /* Helper methods here */
 
 
-  }
-
-  render () {
+  /* Render Method ()
+   * Lets create our components in the render() method!!
+   *
+   * <LandingPage/>
+   *  Landing page is responsible for rendering first page user sees
+   *  Landing page renders <Slider/> and <Entity/> components
+   *  We need to pass TWO props into Landing Page
+   *     1. showLandingPage {Boolean}
+   *     2. entityClick {Event}
+   * 
+   * 
+   * <WikiDetails/>
+   *  This one will need several props for it to work :)
+   *  In charge of showing a planet/entity data from the api.
+   *     1. showWikiDetails = {Boolean}
+   *     2. currentEntity = current chosen entity/planet {Object}
+   *     3. close = manages close state variable {Boolean}
+   *     4. back = fn goes back one step, in array {entityList}
+   *     5. next = fn goes foward one step, in array {entityList}
+   *     6. tracker = variable keeps track of pagination {Number}
+   *
+   */
+  render(){
     return(
-      <main>
-        {/* landing page is responsible for rending our first page user sees
-        We need to pass two props into Landing Page which it requires to work
-        1. showLandingPage {Boolean}
-        2. entityClick {Event} */}
-        <LandingPage/>        
-        {/* The second view we need to render is <WikiDetails/> this one will need several props for it to work :)
-           Lets look at the proptypes requirements
-          */}
-      </main>  
-    )
+      <div>
+        <h2>🥪Comida pa la banda🥪</h2>
+      </div>
+    )   
   }
 
 
