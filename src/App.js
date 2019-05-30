@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import LandingPage from './components/landing_page';
 import WikiDetails from './components/wiki_details';
@@ -19,68 +19,41 @@ class App extends React.Component {
       entityList: []
     }
     
-    this.showWiki = this.showWiki.bind(this);
-    this.close = this.close.bind(this);
-    this.entityClick = this.entityClick.bind(this);
-    this.back = this.back.bind(this);
-    this.next = this.next.bind(this);
   }
 
   showWiki() {
-    this.setState({
-      showLandingPage: false,
-      showWikiDetails: true
-    });
+
   }
 
   close() {
-    this.setState({
-      showLandingPage: true,
-      showWikiDetails: false
-    });
+
   }
 
   entityClick(name) {
-    API.GET.entity(name).then(({ currentEntity, entityList }) => {
-      this.setState({
-        currentEntity,
-        entityList,
-        showLandingPage: false,
-        showWikiDetails: true
-      })
-    })
+
   }
 
   next() {
-    const tracker = (this.state.entityTracker === this.state.entityList.length - 1) ? this.state.entityTracker : this.state.entityTracker + 1;
-    this.setState({
-      entityTracker: tracker,
-      currentEntity: this.state.entityList[tracker]
-    });
+
+
   }
 
   back() {
-    const tracker = (this.state.entityTracker === 0) ? 0 : this.state.entityTracker - 1;
-    this.setState({
-      entityTracker: tracker,
-      currentEntity: this.state.entityList[tracker]
-    });
+
+
   }
 
   render () {
     return(
-      <main className="App">
-        <LandingPage 
-          show={this.state.showLandingPage} 
-          entityClick={this.entityClick}/>      
-        <WikiDetails 
-          currentEntity={this.state.currentEntity}
-          entityList={this.state.currentEntity}
-          tracker={this.state.entityTracker}
-          back={this.back}
-          next={this.next}
-          close={this.close}
-          show={this.state.showWikiDetails}/>
+      <main>
+        {/* landing page is responsible for rending our first page user sees
+        We need to pass two props into Landing Page which it requires to work
+        1. showLandingPage {Boolean}
+        2. entityClick {Event} */}
+        <LandingPage/>        
+        {/* The second view we need to render is <WikiDetails/> this one will need several props for it to work :)
+           Lets look at the proptypes requirements
+          */}
       </main>  
     )
   }

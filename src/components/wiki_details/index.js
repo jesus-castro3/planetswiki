@@ -1,25 +1,26 @@
 import React, {Fragment} from 'react';
 import NavBar from '../../components/navbar';
 
-function WikiDetails(props) {
+const WikiDetails = (props) => {
   
   const details = (entity) => {
     const [data] = entity.data;
     return(
       <div className="wiki-details">
-        <h2 className="wiki-details__title">{data.title}</h2>
-        <p className="wiki-details__date">{data.date_created}</p>
-        <p className="wiki-details__description">{data.description}</p>        
+        <h2 className="wiki-details__title"></h2>
+        <p className="wiki-details__date"></p>
+        <p className="wiki-details__description"></p>        
       </div>
     )
   }
 
-  const renderImage = (img) => <img className="wiki-details__media-image" src={img.href}/>
-
+  const renderImage = (img) => (
+    <img className="wiki-details__media-image"/>
+  )
 
   const renderVideo = (video) => (
     <video className="wiki-details__media-video">
-      <source src={video.href}/>
+      <source/>
     </video>
   )
 
@@ -35,12 +36,14 @@ function WikiDetails(props) {
   }
 
   const close = (close) => (
-    <span className='wiki-details__close' onClick={ ()=> close()}>
+    <span className='wiki-details__close'>
       {'×'}
     </span>
   )
 
-  const navbar = ({ back, next, tracker}) => <NavBar back={back} next={next} tracker={tracker}/>
+  const navbar = ({ back, next, tracker}) => (
+    <NavBar/>
+  )
 
  
   return(
