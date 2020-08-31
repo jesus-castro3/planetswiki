@@ -17,7 +17,7 @@ function WikiDetails() {
     const [pageTracker, setPageTracker] = useState(0);
     const { query } = useRouter();
     const { name } = query;
-    const { setEntity, entityList, isError, isLoading } = useEntity(name);
+    const { entityList, isError, isLoading } = useEntity(name);
 
 
     const renderImage = (img) => <img className="wiki-details__media-image" src={img.href} alt="planet" />
@@ -29,25 +29,20 @@ function WikiDetails() {
     )
 
     const back = () => {
-        return false;
+        const tracker = (pageTracker === 0) ? 0 : pageTracker - 1;
+        setPageTracker(tracker);
     }
 
-    const next = (e) => {
+    const next = () => {
         const tracker = (pageTracker === entityList.length - 1) ? pageTracker : pageTracker + 1;
         setPageTracker(tracker);
-        setEntity({
-            currentEntity: entityList[tracker]
-        });
-    }
-
-    const tracker = () => {
-        return false;
     }
 
     if(isError) return <span> :( Something happended try again later....</span>
 
     if(isLoading) return <span> Is Loading....</span>
     
+    const currentEntity = entityList[pageTracker];
     const { links , data } = currentEntity;
     const [media] = links;
     const [details] = data;
@@ -63,7 +58,7 @@ function WikiDetails() {
                 <p className="wiki-details__date">{details.date_created}</p>
                 <p className="wiki-details__description">{details.description}</p>
             </div>
-            <NavBar back={back} next={next} tracker={tracker} />
+            <NavBar back={back} next={next} tracker={pageTracker} />
         </Fragment>
     )
 }
