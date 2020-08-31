@@ -124,9 +124,16 @@ body {
 .wiki-details__close {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 10px;
   z-index: 100;
+}
+
+.wiki-details__close button{
+  border-style: none;
+  background-color: #3d284b;
+  border: 2px solid #9380a0;
   font-size: 4em;
+  color: white;
   cursor: pointer;
 }
 
