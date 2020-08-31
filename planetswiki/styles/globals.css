@@ -1,21 +1,41 @@
+html,
+body {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #483058;
   font-family:  'Share Tech Mono', monospace;
   color: #fff;
-}
-
-.landing-page {
   text-align: center;
 }
 
-.landing-page__title {
-  margin: 20%;
+.home {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.home__title {
+  margin: 10rem;
   letter-spacing: 2px;
   border: 3px solid #5e3f74;
 }
 
-.landing-page__description {
-  padding: 15%;
+.home__description {
+  padding: 4rem;
   font-size: 1.3em;
 }
 
@@ -26,6 +46,8 @@ body {
   flex-wrap: nowrap;
   border-top: 2px solid #3d284b;
   border-bottom: 1px solid #5e3f74;
+  position: fixed;
+  top: 50%;
   background: linear-gradient(to right, #5e3f74, #251a2e);
 }
 
@@ -42,7 +64,6 @@ body {
 
 .planet__wrapper {
   width: 130px;
-  height: 130px;
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
