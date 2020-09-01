@@ -1,30 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React Workshop
 
-## Getting Started
+Welcome all to the React Workshop, we will be building a `Planetary Wiki` using the `Nasa Image and Video Library API` as a resource to feed into our app.
+We will be learning the basics of a React application, and explore the following.
 
-First, run the development server:
+- What is React
+- What is JSX
+- ES6 features will be using
+- Creating components in React
+- Creating component state
+- Component props
+- Component lifecycles methods
+- Conditional Rendering
+- Adding styles
 
-```bash
-npm run dev
-# or
-yarn dev
+## Requirements:
+
+- install Node
+- install NPM
+
+
+## Instructions
+- Clone this repo e.g. `git clone https://github.com/jesus-castro3/planetswiki.git`
+- `npm install`
+- `npm start`
+
+## Link to the intro presentation:
+https://slides.com/kida1990/react-for-first-times
+
+## ES6 syntax will be using
+
+## Arrow Functions
+
+```
+[1,2,3,4].map(n => n * 20 )
+
+//vs
+
+[1,2,3,4].map(function(n) {
+  return n * 20
+})
+
+//if arrow function receives more then one argument sorrownd w/ ()
+[1,2,3,4].map( (n,idx) => n * 20 + idx  )
+
+//NOTE: you cannot bind this context to arrow functions, this will refer to original context
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Class Components vs Stateless Components
+There are a couple of ways to create components but will be using **TWO** for this workshop
+```
+/** Class Component, includes state **/
+class Button extends React.Component {
+  constructor() {
+    super(props)
+    this.state = {}
+  }
+  render() {
+   <div>
+    <button>click me</button>
+   </div>
+  }
+}
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+/** Stateless component, using function expression w/ arrow functions **/
 
-## Learn More
+const Button = () => (
+  <button>click me</button>
+)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Destructuring
+The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+```
+var a, b, rest;
+[a, b] = [10, 20];
 
-## Deploy on Vercel
+console.log(a);
+// expected output: 10
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+console.log(b);
+// expected output: 20
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+```
+

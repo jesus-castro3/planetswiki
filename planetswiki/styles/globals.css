@@ -46,7 +46,6 @@ body {
   flex-wrap: nowrap;
   border-top: 2px solid #3d284b;
   border-bottom: 1px solid #5e3f74;
-  position: fixed;
   top: 50%;
   background: linear-gradient(to right, #5e3f74, #251a2e);
 }
