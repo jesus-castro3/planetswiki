@@ -1,4 +1,6 @@
-export const ENTITIES = [
+export const PLANETS = [
+    // the sun ain't a planet but.... meh,
+    // he cool we can keep it...or die
     {
         name: 'Sun',
         color: 'yellow',

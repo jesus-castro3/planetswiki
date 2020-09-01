@@ -4,10 +4,10 @@ import { useRouter } from 'next/router'
 import NavBar from '../../components/Navbar';
 import API from '../../lib/api';
 
-function useEntity(name) {
+function usePlanetEntity(name) {
     const { data, error } = useSWR(`https://images-api.nasa.gov/search?q=${name}`, API.GET.entity);
     return {
-        entityList: data && data.entityList,
+        planetList: data && data.planetList,
         isLoading: !error && !data,
         isError: error
     }
@@ -17,7 +17,7 @@ function WikiDetails() {
     const [pageTracker, setPageTracker] = useState(0);
     const router = useRouter();
     const { name } = router.query;
-    const { entityList, isError, isLoading } = useEntity(name);
+    const { planetList, isError, isLoading } = usePlanetEntity(name);
 
 
     const renderImage = (img) => <img className="wiki-details__media-image" src={img.href} alt="planet" />
@@ -36,7 +36,7 @@ function WikiDetails() {
     }
 
     const next = () => {
-        const tracker = (pageTracker === entityList.length - 1) ? pageTracker : pageTracker + 1;
+        const tracker = (pageTracker === planetList.length - 1) ? pageTracker : pageTracker + 1;
         setPageTracker(tracker);
     }
 
@@ -44,8 +44,8 @@ function WikiDetails() {
 
     if(isLoading) return <span> Is Loading....</span>
     
-    const currentEntity = entityList[pageTracker];
-    const { links , data } = currentEntity;
+    const currentPlanet = planetList[pageTracker];
+    const { links , data } = currentPlanet;
     const [media] = links;
     const [details] = data;
 
